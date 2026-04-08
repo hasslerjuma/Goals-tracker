@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My goals</h2>
+
+{%  if goals %}
+    {% for goal in goals %}
+        <p><strong>{{ goal.name }}</strong> - {{ goal.category }} | <a href="/edit/{{ loop.index0 }}">Edit</a> | <a href="/delete/{{ loop.index0 }}">Delete</a></p>
+    {% endfor %}
+{% else %}
+    <p>No goals set yet. Start by adding one!</p>
+{% endif %}
+{% endblock %}

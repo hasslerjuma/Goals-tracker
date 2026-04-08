@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Edit Goal</h2>
+
+<form method="POST">
+    <label>Goal Name:</label>
+    <input type="text" name="name" required>
+    <br><br>
+    <label>Category:</label>
+    <select name="category">
+        <option value="Fitness" {% if goal.category == 'Fitness' %}selected{% endif %}>Fitness</option>
+        <option value="Career" {% if goal.category == 'Career' %}selected{% endif %}>Career</option>
+        <option value="Learning" {% if goal.category == 'Learning' %}selected{% endif %}>Learning</option>
+        <option value="Finance" {% if goal.category == 'Finance' %}selected{% endif %}>Finance</option>
+        <option value="Personal" {% if goal.category == 'Personal' %}selected{% endif %}>Personal</option>
+    </select>
+    <br><br>
+    <button type="submit">Update Goal</button>
+</form>
+{% endblock %}
