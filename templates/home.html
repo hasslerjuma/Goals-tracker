@@ -4,7 +4,11 @@
 
 {%  if goals %}
     {% for goal in goals %}
-        <p><strong>{{ goal.name }}</strong> - {{ goal.category }} | <a href="/edit/{{ goal.id }}">Edit</a> | <a href="/delete/{{ goal.id }}">Delete</a></p>
+        <div class="goal">
+            <strong>{{ goal.name }}</strong> - {{ goal.category }}
+            <a href="/edit/{{ goal.id }}">Edit</a>
+            <a href="/delete/{{ goal.id }}">Delete</a>
+        </div>
     {% endfor %}
 {% else %}
     <p>No goals set yet. Start by adding one!</p>
