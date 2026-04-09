@@ -4,7 +4,8 @@
 
 {%  if goals %}
     {% for goal in goals %}
-        <div class="goal">
+        <div class="goal {% if goal.completed %}completed{% endif %}">
+            <a href="/toggle/{{ goal.id }}">{{ '✓' if goal.completed else '✗' }}</a>
             <strong>{{ goal.name }}</strong> - {{ goal.category }}
             <a href="/edit/{{ goal.id }}">Edit</a>
             <a href="/delete/{{ goal.id }}">Delete</a>

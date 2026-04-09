@@ -9,6 +9,7 @@ class Goal(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     category = db.Column(db.String(100), nullable=False)
+    completed = db.Column(db.Boolean, nullable=False, default=False)
 
 with app.app_context():
     db.create_all()
@@ -49,6 +50,13 @@ def edit_goal(id):
         return redirect(url_for('home'))
     return render_template('edit.html', goal=goal)
 
+@app.route('/toggle/<int:id>')
+def toggle_goal(id):
+    goal = Goal.query.get_or_404(id)
+    goal.completed = not goal.completed
+    db.session.commit()
+    flash('Goal status updated!', 'info')
+    return redirect(url_for('home'))
 
 
 if __name__ == '__main__':

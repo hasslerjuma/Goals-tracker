@@ -120,3 +120,12 @@ button:hover {
     color: #2a4365;
     border-left: 4px solid #4299e1;
 }
+
+.goal.completed {
+    border-left: 4px solid #a0aec0;
+    opacity: 0.6;
+}
+
+.goal.completed strong {
+    text-decoration: line-through;
+}
