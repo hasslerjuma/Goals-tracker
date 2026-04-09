@@ -95,3 +95,28 @@ button {
 button:hover {
     background-color: #38a169;
 }
+
+.flash {
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.success {
+    background-color: #c6f6d5;
+    color: #276749;
+    border-left: 4px solid #48bb78;
+}
+
+.danger {
+    background-color: #fed7d7;
+    color: #9b2c2c;
+    border-left: 4px solid #e53e3e;
+}
+
+.info {
+    background-color: #bee3f8;
+    color: #2a4365;
+    border-left: 4px solid #4299e1;
+}
