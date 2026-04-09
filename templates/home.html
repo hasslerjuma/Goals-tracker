@@ -4,7 +4,7 @@
 
 {%  if goals %}
     {% for goal in goals %}
-        <p><strong>{{ goal.name }}</strong> - {{ goal.category }} | <a href="/edit/{{ loop.index0 }}">Edit</a> | <a href="/delete/{{ loop.index0 }}">Delete</a></p>
+        <p><strong>{{ goal.name }}</strong> - {{ goal.category }} | <a href="/edit/{{ goal.id }}">Edit</a> | <a href="/delete/{{ goal.id }}">Delete</a></p>
     {% endfor %}
 {% else %}
     <p>No goals set yet. Start by adding one!</p>
